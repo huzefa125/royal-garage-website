@@ -1,0 +1,68 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Section from "./Section.astro";
+
+// Images live in /public/car-images. Spaces are URL-encoded for the src.
+const models = [
+  { brand: "Audi", name: "Audi", img: "/car-images/audi.webp" },
+  { brand: "BMW", name: "BMW", img: "/car-images/Bmw.webp" },
+  { brand: "Mercedes-Benz", name: "Mercedes-Benz", img: "/car-images/MercedesBenz.avif" },
+  { brand: "Land Rover", name: "Range Rover", img: "/car-images/rangerover.jpg.jpeg" },
+  { brand: "Volvo", name: "Volvo", img: "/car-images/volvo.avif" },
+  { brand: "Skoda", name: "Skoda Slavia", img: "/car-images/skodaslavia.jpg.jpeg" },
+  { brand: "Mahindra", name: "Thar Roxx", img: "/car-images/thar%20roxx.avif" },
+  { brand: "Tata", name: "Nexon", img: "/car-images/Tata%20nexon.webp" },
+  { brand: "Kia", name: "Seltos", img: "/car-images/kia%20seltos.jpg.jpeg" },
+];
+---
+
+<Section id="models">
+  <div class="mt-[140px]">
+    <SectionTitle
+      sectionTitle="Popular Models We Service"
+      description="We ensure your favourite car always performs like new. Specialized tools and genuine parts for all brands."
+    />
+    <div class="flex gap-5 overflow-x-auto pb-4 snap-x scroll-smooth models-row">
+      {
+        models.map((model) => (
+          <div class="group shrink-0 w-[180px] snap-start rounded-[24px] border border-dark shadow-[0px_4px_0px_#191a23] overflow-hidden bg-gray">
+            <div class="h-28 overflow-hidden">
+              <img
+                src={model.img}
+                alt={`${model.brand} ${model.name}`}
+                loading="lazy"
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-zinc-500">{model.brand}</p>
+              <h3 class="text-base font-medium leading-tight">{model.name}</h3>
+              <span class="mt-2 inline-block text-xs text-green bg-dark rounded-full px-2 py-1">
+                Expert Service
+              </span>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Section>
+
+<style>
+  /* slim, branded horizontal scrollbar for the single-line strip */
+  .models-row {
+    scrollbar-width: thin;
+    scrollbar-color: #191a23 #f3f3f3;
+  }
+  .models-row::-webkit-scrollbar {
+    height: 8px;
+  }
+  .models-row::-webkit-scrollbar-track {
+    background: #f3f3f3;
+    border-radius: 10px;
+  }
+  .models-row::-webkit-scrollbar-thumb {
+    background: #191a23;
+    border-radius: 10px;
+  }
+</style>

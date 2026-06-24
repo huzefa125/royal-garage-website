@@ -52,3 +52,5 @@ Feel free to check [Astro documentation](https://docs.astro.build) or jump into 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+# royal-garage-website

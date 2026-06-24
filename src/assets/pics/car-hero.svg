@@ -1,0 +1,56 @@
+<svg width="640" height="520" viewBox="0 0 640 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- decorative orbit -->
+  <ellipse cx="330" cy="290" rx="290" ry="120" stroke="#191A23" stroke-width="2" stroke-dasharray="2 10" transform="rotate(-12 330 290)"/>
+
+  <!-- decorative shapes -->
+  <circle cx="80" cy="150" r="26" fill="#191A23"/>
+  <circle cx="135" cy="120" r="12" fill="#B9FF66"/>
+  <path d="M560 110 l14 22 l22 14 l-22 14 l-14 22 l-14 -22 l-22 -14 l22 -14 z" fill="#191A23"/>
+  <circle cx="600" cy="380" r="14" fill="#B9FF66"/>
+  <path d="M70 420 l9 14 l14 9 l-14 9 l-9 14 l-9 -14 l-14 -9 l14 -9 z" fill="#191A23"/>
+
+  <!-- ground shadow -->
+  <ellipse cx="330" cy="410" rx="240" ry="26" fill="#191A23" opacity="0.08"/>
+
+  <!-- car body -->
+  <g stroke="#191A23" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M95 350
+             C95 330 110 322 130 320
+             L210 312
+             C235 280 265 258 320 256
+             L420 256
+             C470 258 500 286 522 320
+             L560 326
+             C585 330 600 340 600 360
+             L600 350
+             C600 366 588 374 572 374
+             L120 374
+             C104 374 95 366 95 350 Z" fill="#B9FF66"/>
+    <!-- cabin / windows -->
+    <path d="M250 270 C268 252 290 244 318 244 L398 244 C436 246 462 268 480 296 L250 296 Z" fill="#191A23"/>
+    <line x1="356" y1="246" x2="356" y2="296" stroke="#B9FF66" stroke-width="3"/>
+    <!-- door line + handle -->
+    <line x1="300" y1="320" x2="300" y2="360" stroke="#191A23" stroke-width="2"/>
+    <line x1="320" y1="332" x2="345" y2="332" stroke="#191A23" stroke-width="3"/>
+    <!-- headlight -->
+    <path d="M590 348 l12 2" stroke="#191A23" stroke-width="6"/>
+  </g>
+
+  <!-- wheels -->
+  <g>
+    <circle cx="200" cy="374" r="50" fill="#191A23"/>
+    <circle cx="200" cy="374" r="22" fill="#fff" stroke="#191A23" stroke-width="3"/>
+    <circle cx="200" cy="374" r="6" fill="#B9FF66"/>
+
+    <circle cx="470" cy="374" r="50" fill="#191A23"/>
+    <circle cx="470" cy="374" r="22" fill="#fff" stroke="#191A23" stroke-width="3"/>
+    <circle cx="470" cy="374" r="6" fill="#B9FF66"/>
+  </g>
+
+  <!-- speed lines -->
+  <g stroke="#191A23" stroke-width="4" stroke-linecap="round">
+    <line x1="40" y1="300" x2="95" y2="300"/>
+    <line x1="20" y1="330" x2="80" y2="330"/>
+    <line x1="45" y1="360" x2="90" y2="360"/>
+  </g>
+</svg>

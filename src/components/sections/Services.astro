@@ -1,84 +1,50 @@
 ---
 import SectionTitle from "../ui/SectionTitle.astro";
-import ServiceCard from "../ui/ServiceCard.astro";
 import Section from "./Section.astro";
-
-import c1 from "../../assets/pics/card-pic1.png";
-import c2 from "../../assets/pics/card-pic2.png";
-import c3 from "../../assets/pics/card-pic3.png";
-import c4 from "../../assets/pics/card-pic4.png";
-import c5 from "../../assets/pics/card-pic5.png";
-import c6 from "../../assets/pics/card-pic6.png";
 
 const cards = [
   {
-    index: 1,
-    titleTop: "Search Engine",
-    titleBottom: "Optimization",
-    img: c1,
-    alt: "SEO",
-    link: "https://google.com",
+    title: "Full Car Diagnostics",
+    description:
+      "Advanced diagnostic scanning to accurately identify and resolve all vehicle issues.",
+    variant: "bg-gray",
   },
   {
-    index: 2,
-    titleTop: "Pay-per-click",
-    titleBottom: "advertising",
-    img: c2,
-    alt: "SEO",
-    link: "https://google.com",
+    title: "Brake & Transmission",
+    description:
+      "Expert repair and maintenance to ensure safety, smooth performance, and reliability.",
+    variant: "bg-green",
   },
   {
-    index: 3,
-    titleTop: "Social Media",
-    titleBottom: "Marketing",
-    img: c3,
-    alt: "SEO",
-    link: "https://google.com",
+    title: "Painting, Denting & Accident Repair",
+    description:
+      "Complete bodywork solutions to restore your car's look and structural integrity.",
+    variant: "bg-dark text-gray",
   },
   {
-    index: 1,
-    titleTop: "Email",
-    titleBottom: "Marketing",
-    img: c4,
-    alt: "SEO",
-    link: "https://google.com",
-  },
-  {
-    index: 2,
-    titleTop: "Content",
-    titleBottom: "Creation",
-    img: c5,
-    alt: "SEO",
-    link: "https://google.com",
-  },
-  {
-    index: 3,
-    titleTop: "Analytics and",
-    titleBottom: "Tracking",
-    img: c6,
-    alt: "SEO",
-    link: "https://google.com",
+    title: "All Other Mechanical Work",
+    description:
+      "Comprehensive mechanical services covering engines, suspension, AC, and more.",
+    variant: "bg-gray",
   },
 ];
 
 const description =
-  "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include";
+  "We give your car premium treatment with state-of-the-art technology and skilled technicians.";
 ---
 
 <Section id="services">
   <div class="mt-[140px] mb-5">
-    <SectionTitle sectionTitle="Services" description={description} />
-    <div class="grid lg:grid-cols-2 lg:grid-rows-3 gap-10">
+    <SectionTitle sectionTitle="Our Expert Services" description={description} />
+    <div class="grid lg:grid-cols-2 gap-10">
       {
         cards.map((card) => (
-          <ServiceCard
-            index={card.index}
-            titleTop={card.titleTop}
-            titleBottom={card.titleBottom}
-            img={card.img}
-            alt={card.alt}
-            link={card.link}
-          />
+          <div class="rounded-[45px] border border-dark shadow-[0px_5px_0px_#191a23]">
+            <div class={`flex flex-col gap-5 p-8 sm:p-[50px] rounded-[45px] h-full ${card.variant}`}>
+              <h3 class="text-2xl sm:text-3xl font-medium">{card.title}</h3>
+              <p class="text-base">{card.description}</p>
+            </div>
+          </div>
         ))
       }
     </div>

@@ -2,14 +2,50 @@
 import Form from "../ui/Form.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
+
+const contactInfo = [
+  {
+    title: "Visit Us",
+    lines: [
+      "Shed No. 88, Karelibaug Ind. Estate,",
+      "Nr. Telephone Exc., Baroda - 390 018.",
+    ],
+  },
+  {
+    title: "Call Us",
+    lines: ["+91 8758807860", "+91 9909611091"],
+  },
+  {
+    title: "Email Us",
+    lines: ["royalpathanfiroz@gmail.com"],
+  },
+  {
+    title: "Hours",
+    lines: ["Mon - Sat: 9AM - 8PM", "Sunday: Emergency Only"],
+  },
+];
 ---
 
 <Section id="contact">
   <div class="mb-[140px] relative">
     <SectionTitle
-      sectionTitle="Contact Us"
-      description="Connect with Us: Let's Discuss Your Digital Marketing Needs"
+      sectionTitle="Get in Touch"
+      description="We are always available for your car care needs. Contact us and get expert advice."
     />
-    <Form />
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div class="grid gap-6 sm:grid-cols-2 content-start">
+        {
+          contactInfo.map((info) => (
+            <div class="rounded-[30px] border border-dark bg-gray p-6">
+              <h3 class="greenhead w-fit mb-3 text-lg font-medium">{info.title}</h3>
+              {info.lines.map((line) => (
+                <p class="text-base">{line}</p>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+      <Form />
+    </div>
   </div>
 </Section>

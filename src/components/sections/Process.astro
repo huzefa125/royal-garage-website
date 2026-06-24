@@ -1,17 +1,45 @@
 ---
-import Accordion from "../ui/Accordion.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
 
-const description = "Step-by-Step Guide to Achieving Your Business Goals";
+const steps = [
+  {
+    index: "01",
+    title: "Complete Vehicle Inspection",
+    description:
+      "We thoroughly inspect and diagnose your car using advanced tools to identify all issues accurately.",
+  },
+  {
+    index: "02",
+    title: "Transparent Repair & Approval",
+    description:
+      "We explain the problem, share repair options, and proceed only after your approval using quality parts.",
+  },
+  {
+    index: "03",
+    title: "Precision Repair & Quality Check",
+    description:
+      "Expert technicians complete the work, followed by detailed testing and final quality inspection.",
+  },
+];
 ---
 
 <Section id="process">
   <div class="mt-[140px]">
     <SectionTitle
-      sectionTitle="Our Working Process"
-      description={description}
+      sectionTitle="The Royal Care Process"
+      description="With step-by-step transparency, we ensure your car gets the best possible service."
     />
-    <Accordion />
+    <div class="grid gap-8 lg:grid-cols-3">
+      {
+        steps.map((step) => (
+          <div class="rounded-[45px] border border-dark shadow-[0px_5px_0px_#191a23] bg-gray p-8 sm:p-[50px] flex flex-col gap-5">
+            <span class="text-5xl sm:text-6xl font-medium">{step.index}</span>
+            <h3 class="text-2xl font-medium">{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </Section>

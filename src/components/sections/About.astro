@@ -1,0 +1,46 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Section from "./Section.astro";
+
+const highlights = [
+  {
+    title: "Precision Engineering",
+    description:
+      "Skilled technicians and advanced tools deliver accurate, reliable repairs every time.",
+  },
+  {
+    title: "World Class Facility",
+    description:
+      "A clean, modern workshop equipped to handle premium and luxury vehicles.",
+  },
+  {
+    title: "Genuine Parts",
+    description:
+      "Specialized tools and genuine parts so your car always performs like new.",
+  },
+  {
+    title: "Customer First",
+    description:
+      "Transparent pricing and honest work — we treat every car like royalty.",
+  },
+];
+---
+
+<Section id="about">
+  <div class="mt-[140px]">
+    <SectionTitle
+      sectionTitle="The Royal Standard"
+      description="We maintain the highest level of precision and cleanliness, because your car is not just a machine — it is our priority."
+    />
+    <div class="grid gap-8 sm:grid-cols-2">
+      {
+        highlights.map((item) => (
+          <div class="rounded-[45px] border border-dark shadow-[0px_5px_0px_#191a23] bg-gray p-8 sm:p-[50px] flex flex-col gap-4">
+            <h3 class="greenhead w-fit text-xl sm:text-2xl font-medium">{item.title}</h3>
+            <p>{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Section>

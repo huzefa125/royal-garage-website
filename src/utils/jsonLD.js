@@ -24,12 +24,36 @@ export default function jsonLDGenerator({ type, post, url }) {
       }
     </script>`;
   }
+  const site = import.meta.env.SITE;
   return `<script type="application/ld+json">
       {
-      "@context": "https://schema.org/",
-      "@type": "WebSite",
-      "name": "${siteData.title}",
-      "url": "${import.meta.env.SITE}"
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "@id": "${site}",
+        "name": "${siteData.title}",
+        "description": "${siteData.description}",
+        "url": "${site}",
+        "image": "${site}${siteData.image.src}",
+        "telephone": "+918758807860",
+        "email": "royalpathanfiroz@gmail.com",
+        "priceRange": "₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Shed No. 88, Karelibaug Ind. Estate, Nr. Telephone Exchange",
+          "addressLocality": "Vadodara",
+          "addressRegion": "Gujarat",
+          "postalCode": "390018",
+          "addressCountry": "IN"
+        },
+        "areaServed": "Vadodara",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "20:00"
+          }
+        ]
       }
     </script>`;
 }

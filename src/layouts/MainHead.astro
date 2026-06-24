@@ -8,15 +8,25 @@ const { title, description, image, frontmatter, robots } = Astro.props;
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/logo.png" />
 
-  <!-- iOS 
-  <link rel="apple-touch-icon" sizes="256x256" href="/path/to/your/icon.png" />
-  -->
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="generator" content={Astro.generator} />
+  <meta name="theme-color" content="#191a23" />
 
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta
+    name="keywords"
+    content="car service Vadodara, car repair Baroda, premium car care, luxury car service, denting painting, accident repair, car diagnostics, brake transmission repair, Royal Auto Garage"
+  />
+  <meta name="author" content="Royal Auto Garage" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Geo / local SEO -->
+  <meta name="geo.region" content="IN-GJ" />
+  <meta name="geo.placename" content="Vadodara" />
+  <meta name="language" content="English" />
 
   <Seo
     {title}

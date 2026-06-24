@@ -1,123 +1,86 @@
 ---
-import { Image } from "astro:assets";
-import Facebook from "../../assets/facebook.svg";
-import Linkedin from "../../assets/linkedin.svg";
-import Logo from "../../assets/logo-alt.svg";
-import Twitter from "../../assets/twitter.svg";
-import ShortForm from "../ui/ShortForm.astro";
-
-const logos = [
-  { name: "Facebook", src: Facebook, link: "https://facebook.com" },
-  { name: "Linkedin", src: Linkedin, link: "https://linkedin.com" },
-  { name: "Twitter", src: Twitter, link: "https://twitter.com" },
+const specialties = [
+  "Automotive Salvage Buyers",
+  "Premium Car Repairers",
+  "Body & Colour Works",
+  "Insurance Claim Support",
 ];
 
 const links = [
-  { name: "About us", href: "#about" },
+  { name: "Home", href: "#home" },
   { name: "Services", href: "#services" },
-  { name: "Use Cases", href: "#cases" },
-  { name: "Pricing", href: "#Testimonials" },
-  { name: "Blog", href: "#Home" },
+  { name: "Process", href: "#process" },
+  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
 ];
 ---
 
 <section class="sm:px-5">
   <div class="w-full max-w-[1240px] mx-auto">
     <div
-      class="px-[15px] bg-dark text-gray py-[55px] lg:px-[60px] sm:rounded-t-[45px]"
+      class="px-6 bg-dark text-gray py-[55px] lg:px-[60px] sm:rounded-t-[45px]"
     >
-      <div>
-        <div
-          class="flex flex-col lg:flex-row gap-7 items-center justify-between"
-        >
-          <picture>
-            <a href="#home">
-              <Image src={Logo} alt="Logo for Kreatif Brand" />
-            </a>
-          </picture>
-          <ul class="flex flex-col sm:flex-row gap-5">
-            {
-              links.map((link) => {
-                return (
-                  <li class="text-center">
-                    <a class="underline" href={link.href}>
-                      {link.name}
-                    </a>
-                  </li>
-                );
-              })
-            }
+      <div class="grid gap-10 lg:grid-cols-4">
+        <div class="lg:col-span-1">
+          <div class="flex items-center gap-3 mb-5">
+            <span
+              class="flex h-9 w-9 items-center justify-center rounded-full bg-green text-dark font-medium"
+              >R</span
+            >
+            <span class="text-xl font-medium text-white">Royal Auto Garage</span>
+          </div>
+          <p class="text-sm leading-6">
+            Royal Auto Garage is committed to providing world-class automotive
+            excellence with a customer-first approach. We treat every car like
+            royalty.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="greenhead w-fit mb-5 text-lg font-medium">Our Specialties</h3>
+          <ul class="flex flex-col gap-3 text-sm">
+            {specialties.map((item) => <li>{item}</li>)}
           </ul>
-          <ul class="flex gap-5">
+        </div>
+
+        <div>
+          <h3 class="greenhead w-fit mb-5 text-lg font-medium">Quick Navigation</h3>
+          <ul class="flex flex-col gap-3 text-sm">
             {
-              logos.map((logo) => {
-                return (
-                  <li>
-                    <a href={logo.link} target="_blank">
-                      <picture>
-                        <Image src={logo.src} alt={logo.name} />
-                      </picture>
-                    </a>
-                  </li>
-                );
-              })
+              links.map((link) => (
+                <li>
+                  <a class="hover:text-green" href={link.href}>
+                    {link.name}
+                  </a>
+                </li>
+              ))
             }
           </ul>
         </div>
 
-        <div class="flex flex-col lg:flex-row mt-[66px] mb-[51px]">
-          <div
-            class="flex text-center lg:text-start flex-col w-full lg:w-[30%]"
-          >
-            <h3 class="mb-5 text-center md:text-left text-2xl text-green">Contact us</h3>
-            <div class="flex flex-col justify-between gap-4">
-              <span> Email: examplemail.com </span>
-              <span> Phone: +123 456 789 </span>
-              <span class="lg:w-3/4">
-                Address: 1234 Street Name, City Name, Country Name
-              </span>
-            </div>
-          </div>
-          <div class="flex-grow my-10 lg:my-0 lg:ml-12">
-            <ShortForm />
+        <div>
+          <h3 class="greenhead w-fit mb-5 text-lg font-medium">Get In Touch</h3>
+          <div class="flex flex-col gap-3 text-sm">
+            <a class="hover:text-green" href="tel:+918758807860">+91 8758807860</a>
+            <a class="hover:text-green" href="tel:+919909611091">+91 9909611091</a>
+            <a class="hover:text-green" href="mailto:royalpathanfiroz@gmail.com"
+              >royalpathanfiroz@gmail.com</a
+            >
+            <span>
+              Shed No. 88, Karelibaug Ind. Estate, Baroda - 390 018. (Gujarat)
+            </span>
           </div>
         </div>
       </div>
 
-      <div class="h-[1px] bg-gray mb-5"></div>
+      <div class="h-[1px] bg-gray my-8"></div>
       <div
-        class="flex flex-col lg:flex-row h-20 justify-center mt-4 text-center md:justify-between md:mt-0"
+        class="flex flex-col lg:flex-row justify-center text-center gap-2 md:justify-between"
       >
-        <span
-          >2024 Positivus - Made With <a
-            class="underline"
-            target="_blank"
-            href="https://astro.build">Astro</a
-          > by 
-          <a 
-          class="underline"
-          target="_blank"
-          href="https://manulthanura.com">Manul</a
-          ></span
-        >&nbsp
-        <span>
-          Credits (
-          <a
-            href="https://www.olgaskuja.design/"
-            target="_blank"
-            class="underline">Olga</a
-          >,
-          <a
-            href="https://esteban-vasquez.netlify.app/"
-            target="_blank"
-            class="underline">Esteban</a
-          >)
-          <span> &</span>
-          <a
-            class="underline"
-            href="https://creativecommons.org/licenses/by/4.0/"
-            target="_blank">Licence</a
-          >
+        <span>© 2026 Royal Auto Garage. Developed by Royal Tech</span>
+        <span class="flex gap-5 justify-center">
+          <a class="underline" href="#">Privacy Policy</a>
+          <a class="underline" href="#">Terms of Service</a>
         </span>
       </div>
     </div>

@@ -1,8 +1,8 @@
 {
-  "title": "Positivus",
-  "description": "Positivus is a simple and minimalistic blog theme for Ghost. It is designed to be a perfect starting point for your blog project.",
+  "title": "Royal Auto Garage",
+  "description": "Royal Auto Garage in Vadodara (Baroda) offers premium car care — full diagnostics, brake & transmission, painting, denting, accident repair, and all mechanical work for luxury and Indian car brands.",
   "image": {
-    "src": "https://github.com/manulthanura/Positivus/raw/main/public/cover.png",
-    "alt": "Positivus"
+    "src": "/car-images/MercedesBenz.avif",
+    "alt": "Royal Auto Garage - Premium Car Care Center in Vadodara"
   }
 }
