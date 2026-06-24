@@ -1,41 +1,15 @@
 ---
 import AccordionItem from "./AccordionItem.astro";
-
-const content = [
-  {
-    index: 1,
-    title: "What car brands do you specialize in?",
-    description:
-      "We primarily specialise in premium and luxury segment cars, including Audi, BMW, Mercedes-Benz, Land Rover, Jaguar, Volvo, Skoda, and Volkswagen. In addition to premium vehicles, we also repair and service a wide range of Indian and international car brands such as Maruti Suzuki, Hyundai, Honda, Toyota, Tata, Mahindra, Kia, Ford, and others.",
-  },
-  {
-    index: 2,
-    title: "Do you handle insurance claims for accidents?",
-    description:
-      "Yes. We provide complete insurance claim support and accident repair services, and our team assists you with the documentation and coordination so the process is smooth and hassle-free.",
-  },
-  {
-    index: 3,
-    title: "Do you buy damaged or scrap cars?",
-    description:
-      "Yes, we are automotive salvage buyers. If you have a damaged, accident-hit, or scrap car, contact our specialists for a fair valuation.",
-  },
-  {
-    index: 4,
-    title: "Where is Royal Auto Garage located?",
-    description:
-      "We are located at Shed No. 88, Karelibaug Ind. Estate, Nr. Telephone Exchange, Baroda - 390 018, Gujarat.",
-  },
-];
+import faqs from "../../data/faqData.json";
 ---
 
 {
-  content.map((item) => {
+  faqs.map((item, i) => {
     return (
       <AccordionItem
-        index={item.index}
-        title={item.title}
-        description={item.description}
+        index={i + 1}
+        title={item.question}
+        description={item.answer}
       />
     );
   })

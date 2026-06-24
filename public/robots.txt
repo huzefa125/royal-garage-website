@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://royal-garage-website-t93y.vercel.app/sitemap-index.xml

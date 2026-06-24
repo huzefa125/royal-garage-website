@@ -8,6 +8,20 @@ import Process from "../components/sections/Process.astro";
 import Services from "../components/sections/Services.astro";
 import Testimonials from "../components/sections/Testimonials.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+
+export const prerender = true;
+
+const site = Astro.site?.toString().replace(/\/$/, "") ?? "";
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${site}/#home` },
+    { "@type": "ListItem", position: 2, name: "Services", item: `${site}/#services` },
+    { "@type": "ListItem", position: 3, name: "About", item: `${site}/#about` },
+    { "@type": "ListItem", position: 4, name: "Contact", item: `${site}/#contact` },
+  ],
+};
 ---
 
 <MainLayout
@@ -22,4 +36,9 @@ import MainLayout from "../layouts/MainLayout.astro";
   <Testimonials />
   <Faq />
   <Contact />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(breadcrumbSchema)}
+  />
 </MainLayout>
