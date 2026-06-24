@@ -2,17 +2,17 @@
 import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
 
-// Images live in /public/car-images. Spaces are URL-encoded for the src.
+// Optimized images live in /public/cars (resized + webp).
 const models = [
-  { brand: "Audi", name: "Audi", img: "/car-images/audi.webp" },
-  { brand: "BMW", name: "BMW", img: "/car-images/Bmw.webp" },
-  { brand: "Mercedes-Benz", name: "Mercedes-Benz", img: "/car-images/MercedesBenz.avif" },
-  { brand: "Land Rover", name: "Range Rover", img: "/car-images/rangerover.jpg.jpeg" },
-  { brand: "Volvo", name: "Volvo", img: "/car-images/volvo.avif" },
-  { brand: "Skoda", name: "Skoda Slavia", img: "/car-images/skodaslavia.jpg.jpeg" },
-  { brand: "Mahindra", name: "Thar Roxx", img: "/car-images/thar%20roxx.avif" },
-  { brand: "Tata", name: "Nexon", img: "/car-images/Tata%20nexon.webp" },
-  { brand: "Kia", name: "Seltos", img: "/car-images/kia%20seltos.jpg.jpeg" },
+  { brand: "Audi", name: "Audi", img: "/cars/audi.webp" },
+  { brand: "BMW", name: "BMW", img: "/cars/bmw.webp" },
+  { brand: "Mercedes-Benz", name: "Mercedes-Benz", img: "/cars/mercedes.webp" },
+  { brand: "Land Rover", name: "Range Rover", img: "/cars/rangerover.webp" },
+  { brand: "Volvo", name: "Volvo", img: "/cars/volvo.webp" },
+  { brand: "Skoda", name: "Skoda Slavia", img: "/cars/skoda.webp" },
+  { brand: "Mahindra", name: "Thar Roxx", img: "/cars/thar.avif" },
+  { brand: "Tata", name: "Nexon", img: "/cars/nexon.webp" },
+  { brand: "Kia", name: "Seltos", img: "/cars/kia-seltos.webp" },
 ];
 ---
 
@@ -30,7 +30,10 @@ const models = [
               <img
                 src={model.img}
                 alt={`${model.brand} ${model.name}`}
+                width="440"
+                height="300"
                 loading="lazy"
+                decoding="async"
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>

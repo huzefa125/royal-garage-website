@@ -1,17 +1,27 @@
 ---
 import SectionTitle from "../ui/SectionTitle.astro";
-import SwiperSlider from "../ui/SwiperSlider.astro";
 import Section from "./Section.astro";
+import testimonials from "../../data/clientData.json";
 ---
 
 <Section id="testimonials">
-  <div class="mt-20">
+  <div class="mt-20 mb-[150px]">
     <SectionTitle
       sectionTitle="Driven by Client Satisfaction"
       description="We believe in excellence. See why our clients trust us with their vehicles."
     />
-    <div class="rounded-[45px] bg-dark mb-[150px] text-gray">
-      <SwiperSlider />
+    <div class="grid gap-8 md:grid-cols-3">
+      {
+        testimonials.map((item) => (
+          <figure class="flex flex-col justify-between gap-6 rounded-[35px] border border-green bg-dark p-8 text-gray h-full">
+            <blockquote class="leading-7">"{item.comment}"</blockquote>
+            <figcaption>
+              <div class="text-green font-medium">{item.name}</div>
+              <div class="text-sm">{item.role}</div>
+            </figcaption>
+          </figure>
+        ))
+      }
     </div>
   </div>
 </Section>
