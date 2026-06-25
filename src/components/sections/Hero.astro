@@ -32,25 +32,18 @@ import Section from "./Section.astro";
         </div>
       </div>
     </div>
-    <div class="flex items-center py-5 md:w-6/12 md:pb-20 md:pt-10">
-      <div class="relative w-full">
-        <!-- decorative shapes -->
+    <div class="flex items-center py-5 md:w-6/12 md:pb-16 md:pt-10">
+      <div class="relative mx-auto w-full max-w-[560px] px-2 pb-6">
+        <!-- soft green glow behind the image -->
         <div
-          class="absolute -top-4 -right-2 z-0 hidden h-24 w-24 rounded-full bg-green md:block"
-        >
-        </div>
-        <svg
-          class="absolute -left-4 top-8 z-20 h-10 w-10 text-black"
-          viewBox="0 0 24 24"
-          fill="currentColor"
+          class="absolute inset-6 z-0 rounded-[2.5rem] bg-green/40 blur-2xl"
           aria-hidden="true"
         >
-          <path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"></path>
-        </svg>
+        </div>
 
         <!-- main image card -->
         <div
-          class="relative z-10 overflow-hidden rounded-[2rem] border-2 border-black bg-zinc-900 shadow-[6px_6px_0_0_#b9ff66]"
+          class="relative z-10 overflow-hidden rounded-[2rem] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35)] ring-1 ring-black/5"
         >
           <img
             src="/cars/rangerover.webp"
@@ -60,11 +53,27 @@ import Section from "./Section.astro";
             loading="eager"
             class="h-full w-full object-cover"
           />
+          <!-- bottom gradient for depth -->
+          <div
+            class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/40 to-transparent"
+            aria-hidden="true"
+          >
+          </div>
         </div>
 
-        <!-- floating stats badge -->
+        <!-- rating chip top-right -->
         <div
-          class="absolute -bottom-5 left-6 z-20 flex items-center gap-3 rounded-2xl border-2 border-black bg-white px-5 py-3 shadow-[3px_3px_0_0_#000]"
+          class="absolute right-5 top-5 z-20 flex items-center gap-1.5 rounded-full bg-white/90 px-3.5 py-2 shadow-lg backdrop-blur"
+        >
+          <svg class="h-4 w-4 text-green" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.168L12 18.896l-7.335 3.866 1.401-8.168L.132 9.21l8.2-1.192z"></path>
+          </svg>
+          <span class="text-sm font-medium text-black">4.9 Rating</span>
+        </div>
+
+        <!-- floating stats badge bottom-left -->
+        <div
+          class="absolute -bottom-1 left-1 z-20 flex items-center gap-3 rounded-2xl bg-white px-5 py-3.5 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.3)]"
         >
           <span class="flex h-11 w-11 items-center justify-center rounded-full bg-green">
             <svg class="h-6 w-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
