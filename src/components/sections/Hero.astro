@@ -33,14 +33,50 @@ import Section from "./Section.astro";
       </div>
     </div>
     <div class="flex items-center py-5 md:w-6/12 md:pb-20 md:pt-10">
-      <img
-        src="/car-hero.svg"
-        alt="Premium car care"
-        width="640"
-        height="520"
-        loading="eager"
-        class="w-full h-auto"
-      />
+      <div class="relative w-full">
+        <!-- decorative shapes -->
+        <div
+          class="absolute -top-4 -right-2 z-0 hidden h-24 w-24 rounded-full bg-green md:block"
+        >
+        </div>
+        <svg
+          class="absolute -left-4 top-8 z-20 h-10 w-10 text-black"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"></path>
+        </svg>
+
+        <!-- main image card -->
+        <div
+          class="relative z-10 overflow-hidden rounded-[2rem] border-2 border-black bg-zinc-900 shadow-[6px_6px_0_0_#b9ff66]"
+        >
+          <img
+            src="/cars/rangerover.webp"
+            alt="Expert care for your luxury vehicle"
+            width="640"
+            height="520"
+            loading="eager"
+            class="h-full w-full object-cover"
+          />
+        </div>
+
+        <!-- floating stats badge -->
+        <div
+          class="absolute -bottom-5 left-6 z-20 flex items-center gap-3 rounded-2xl border-2 border-black bg-white px-5 py-3 shadow-[3px_3px_0_0_#000]"
+        >
+          <span class="flex h-11 w-11 items-center justify-center rounded-full bg-green">
+            <svg class="h-6 w-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </span>
+          <div class="leading-tight">
+            <p class="text-xl font-medium text-black">5000+</p>
+            <p class="text-sm text-zinc-600">Cars Serviced</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </Section>
